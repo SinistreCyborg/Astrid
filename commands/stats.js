@@ -10,7 +10,7 @@ export default class extends Command {
         });
     }
 
-    static async exec(message) {
+    async exec(message) {
 
         return message.channel.createMessage({
             embed: {

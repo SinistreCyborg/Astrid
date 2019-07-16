@@ -31,7 +31,7 @@ export default class extends Eris.Client {
         Console.success(this.user.username, `Logged in successfully, serving ${this.guilds.size} guilds.`);
     }
 
-    onMessageCreate(message) {
+    async onMessageCreate(message) {
 
         if (
             message.author.bot
@@ -53,27 +53,23 @@ export default class extends Eris.Client {
             ? message.content.split(" ").slice(1)
             : message.content.slice(process.env.PREFIX.length).split(" ");
 
-        const command = this.client.resolveCommand(params[0]);
+        const command = this.resolveCommand(params[0]);
         if (!command) return;
 
         if (command.guildOnly && message.channel instanceof PrivateChannel) {
-            return this.err(message, `\`${command.name}\` must be run in a server.`);
+            await message.channel.createMessage(`\\🚫 \`${command.name}\` must be run in a server.`);
         }
 
         if (command.ownerOnly && message.author.id !== process.env.OWNER) {
-            return this.err(message, `\`${command.name}\` is restricted to the owner.`);
+            await message.channel.createMessage(`\\🚫 \`${command.name}\` is restricted to the owner.`);
         }
 
         try {
             command.exec(message, ...params.slice(1));
         } catch (err) {
-            this.err(message, err || err.message);
+            message.channel.createMessage(`\\🚫 ${err || err.message}`);
         }
 
-    }
-
-    static async err(message, text) {
-        await message.channel.createMessage(`\\🚫 ${text}`);
     }
 
     resolveCommand(name) {
