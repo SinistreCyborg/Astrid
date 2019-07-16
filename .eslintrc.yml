@@ -15,3 +15,5 @@ rules:
     - 4
   padded-blocks:
     - off
+  no-throw-literal:
+    - off
