@@ -15,7 +15,3 @@ rules:
     - 4
   padded-blocks:
     - off
-  import/prefer-default-export:
-    - off
-  import/no-unresolved:
-    - off
