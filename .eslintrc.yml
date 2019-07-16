@@ -17,3 +17,7 @@ rules:
     - off
   no-throw-literal:
     - off
+  class-methods-use-this:
+    - off
+  import/named:
+    - off
