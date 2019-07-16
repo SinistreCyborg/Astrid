@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
+    "common-tags": "^1.8.0",
     "eris": "abalabahaha/eris#dev",
     "esm": "^3.2.25",
     "node-fetch": "^2.6.0"
