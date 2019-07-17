@@ -89,7 +89,7 @@ export default class extends Eris.Client {
             headers: { 'Authorization': process.env.DBL }
         }).then(res => res.json());
 
-        return voted;
+        return Boolean(voted);
 
     }
 

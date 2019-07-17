@@ -1,8 +1,8 @@
-export default class {
+function isFunction(input) {
+    return typeof input === 'function';
+}
 
-    isFunction(input) {
-        return typeof input === 'function';
-    }
+export default class {
 
     static codeBlock(lang, code) {
         return `\`\`\`${lang}\n${code}\`\`\``;
@@ -12,8 +12,8 @@ export default class {
         if (!input) return false;
         return (input instanceof Promise) || (
             input !== Promise.prototype
-            && this.isFunction(input.then)
-            && this.isFunction(input.catch)
+            && isFunction(input.then)
+            && isFunction(input.catch)
         );
     }
 
