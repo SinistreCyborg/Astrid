@@ -5,6 +5,7 @@ export { default as Command } from './structures/Command';
 export { default as Event } from './structures/Event';
 export { default as Console } from './structures/Console';
 export { default as Util } from './structures/Util';
+export * from './structures/Modules';
 export * from './structures/Constants';
 
 export { default as fetch } from 'node-fetch';
