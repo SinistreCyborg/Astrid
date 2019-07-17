@@ -27,6 +27,13 @@ export default class extends Eris.Client {
 
     }
 
+    get aliases() {
+        return [...this.commands.values()].reduce((a, c) => {
+            for (const alias of c.aliases) a.set(alias, c);
+            return a;
+        }, new Map());
+    }
+
     onReady() {
         Console.success(this.user.username, `Logged in successfully, serving ${this.guilds.size} guilds.`);
     }

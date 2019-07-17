@@ -6,12 +6,14 @@ export default class {
      * @param {string} options.name
      * @param {string} options.description
      * @param {string} options.category
+     * @param {string[]} [options.aliases=[]]
      * @param {boolean} [options.guildOnly=false]
      * @param {boolean} [options.ownerOnly=false]
      * @param {string[]} [options.requiredPerms=[]]
      */
     constructor(client, {
         name, description, category,
+        aliases = [],
         guildOnly = false,
         ownerOnly = false,
         requiredPerms = [],
@@ -21,6 +23,7 @@ export default class {
             name,
             description,
             category,
+            aliases,
             guildOnly,
             ownerOnly,
             requiredPerms,
