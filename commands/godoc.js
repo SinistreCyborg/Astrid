@@ -1,5 +1,5 @@
 import {
-    Command, fetch as $, APIs,
+    Command, fetch as $, APIs, Util,
 } from '..';
 
 export default class extends Command {
@@ -31,7 +31,7 @@ export default class extends Command {
                     url: 'https://godoc.org',
                 },
                 description: `[__**${pkg.name}**__](https://godoc.org/${pkg.path})\n${pkg.synopsis}`,
-                fields: [{ name: 'Install', value: pkg.path }],
+                fields: [{ name: 'Install', value: Util.codeBlock('', pkg.path) }],
             },
         });
 
