@@ -19,7 +19,8 @@ export default class extends Command {
 
         const pkg = await $(APIs.YARN(term))
             .then(res => res.json())
-            .then(body => body.results[0].package);
+            .then(body => body.results[0].package)
+            .catch(() => {});
 
         if (!pkg) throw 'Couldn\'t find any relevant results!';
         return message.channel.createMessage({

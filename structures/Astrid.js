@@ -64,17 +64,17 @@ export default class extends Eris.Client {
         if (!command) return;
 
         if (command.guildOnly && message.channel instanceof PrivateChannel) {
-            await message.channel.createMessage(`\\🚫 \`${command.name}\` must be run in a server.`);
+            await message.channel.createMessage(`🚫 \`${command.name}\` must be run in a server.`);
         }
 
         if (command.ownerOnly && message.author.id !== process.env.OWNER) {
-            await message.channel.createMessage(`\\🚫 \`${command.name}\` is restricted to the owner.`);
+            await message.channel.createMessage(`🚫 \`${command.name}\` is restricted to the owner.`);
         }
 
         try {
-            command.exec(message, ...params.slice(1));
+            await command.exec(message, ...params.slice(1));
         } catch (err) {
-            message.channel.createMessage(`\\🚫 ${err || err.message}`);
+            message.channel.createMessage(`🚫 ${err || err.message}`);
         }
 
     }
