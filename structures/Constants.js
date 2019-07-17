@@ -14,4 +14,5 @@ export const APIs = {
     GITHUB: repo => `https://api.github.com/repos/${repo}`,
     MDN: term => `https://developer.mozilla.org/en-US/search.json?q=${encodeURIComponent(term)}`,
     DBL: (bot, user) => `https://discordbots.org/api/bots/${bot}/check?userId=${user}`,
+    HASTE: 'https://hastebin.com/documents',
 };
