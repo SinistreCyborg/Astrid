@@ -5,4 +5,8 @@ export const APIs = {
     GO: term => `https://api.godoc.org/search?q=${encodeURIComponent(term)}`,
     YARN: term => `https://api.npms.io/v2/search?q=${term}`,
     BREW: 'https://formulae.brew.sh/api/formula.json',
+    GEM: term => `https://rubygems.org/api/v1/gems/${term}.json`,
+    CLOJURE: term => `https://clojars.org/api/artifacts/${term}`,
+    NET: term => `https://api-v2v3search-0.nuget.org/query?q=${encodeURIComponent(term)}`,
+    ELIXIR: term => `https://hex.pm/api/packages?search=${term}`,
 };
