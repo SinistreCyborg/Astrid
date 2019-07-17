@@ -36,6 +36,20 @@ export default class extends Eris.Client {
 
     onReady() {
         Console.success(this.user.username, `Logged in successfully, serving ${this.guilds.size} guilds.`);
+
+        if (this.user.id === '571097569644773455') {
+            setInterval(() => {
+                $(`https://discordbots.org/api/bots/${this.user.id}/stats`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': process.env.DBL,
+                    },
+                    body: JSON.stringify({ server_count: this.guilds.size }),
+                }).then(() => Console.log('DiscordBotList', 'Updated server count!'));
+            }, 30 * 60 * 1000);
+        }
+
     }
 
     async onMessageCreate(message) {
