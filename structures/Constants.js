@@ -12,4 +12,5 @@ export const APIs = {
     PIP: term => `https://pypi.python.org/pypi/${term}/json`,
     DART: term => `https://pub.dev/api/packages/${term}`,
     GITHUB: repo => `https://api.github.com/repos/${repo}`,
+    MDN: term => `https://developer.mozilla.org/en-US/search.json?q=${encodeURIComponent(term)}`,
 };
