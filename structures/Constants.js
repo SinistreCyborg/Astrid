@@ -11,4 +11,5 @@ export const APIs = {
     ELIXIR: term => `https://hex.pm/api/packages?search=${term}`,
     PIP: term => `https://pypi.python.org/pypi/${term}/json`,
     DART: term => `https://pub.dev/api/packages/${term}`,
+    GITHUB: repo => `https://api.github.com/repos/${repo}`,
 };
