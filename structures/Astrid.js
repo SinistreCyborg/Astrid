@@ -1,6 +1,6 @@
 import Eris from 'eris';
 import { readdirSync } from 'fs';
-import { Console } from '..';
+import { Console, fetch as $, APIs } from '..';
 
 export default class extends Eris.Client {
 
@@ -81,6 +81,16 @@ export default class extends Eris.Client {
 
     resolveCommand(name) {
         return this.commands.get(name) || this.aliases.get(name);
+    }
+
+    async hasVoted(id) {
+
+        const { voted } = await $(APIs.DBL(this.user.id, id), {
+            headers: { 'Authorization': process.env.DBL }
+        }).then(res => res.json());
+
+        return voted;
+
     }
 
 }
