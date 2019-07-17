@@ -9,4 +9,6 @@ export const APIs = {
     CLOJURE: term => `https://clojars.org/api/artifacts/${term}`,
     NET: term => `https://api-v2v3search-0.nuget.org/query?q=${encodeURIComponent(term)}`,
     ELIXIR: term => `https://hex.pm/api/packages?search=${term}`,
+    PIP: term => `https://pypi.python.org/pypi/${term}/json`,
+    DART: term => `https://pub.dev/api/packages/${term}`,
 };
