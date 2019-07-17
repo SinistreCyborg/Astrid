@@ -8,7 +8,7 @@ export default class extends Command {
         super(client, {
             name: 'brew',
             description: 'Search for Homebrew formulae.',
-            category: '📦 Package',
+            category: '💻 Developer',
             usage: '<package name>',
         });
     }
