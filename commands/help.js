@@ -17,7 +17,7 @@ export default class extends Command {
         if (potential) {
 
             const command = this.client.resolveCommand(potential);
-            if (!command) throw 'I don\'t recognize that command. Sorry!';
+            if (!command || (command.ownerOnly && message.author.id !== process.env.OWNER)) throw 'I don\'t recognize that command. Sorry!';
 
             return message.channel.createMessage({
                 embed: {
@@ -58,6 +58,7 @@ export default class extends Command {
     cmdByCategory(category) {
         return [...this.client.commands.values()]
             .filter(cmd => cmd.category === category)
+            .filter(cmd => !cmd.ownerOnly)
             .map(cmd => cmd.name);
     }
 
