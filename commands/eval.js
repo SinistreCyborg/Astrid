@@ -20,8 +20,8 @@ export default class extends Command {
     async exec(message, ...input) {
 
         if (
-            // this.client.user.id === '571097569644773455'
-            message.author.id !== process.env.OWNER
+            this.client.user.id === '571097569644773455'
+            && message.author.id !== process.env.OWNER
             && !(await this.client.hasVoted(message.author.id))
         ) {
             throw stripIndents`
