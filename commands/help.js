@@ -33,10 +33,7 @@ export default class extends Command {
             color: 0xC9B37A,
             title: 'My Commands',
             fields: [],
-            description: stripIndents`
-                **Support Server**: https://discord.gg/JuN5PCt
-                **Code Repository**: https://github.com/SinistreCyborg/Astrid
-            `,
+            description: '**Code Repository**: https://github.com/SinistreCyborg/Astrid',
         };
 
         this.categories.forEach((category) => {
