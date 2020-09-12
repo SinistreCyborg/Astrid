@@ -13,7 +13,7 @@
     "common-tags": "^1.8.0",
     "eris": "abalabahaha/eris#dev",
     "esm": "^3.2.25",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "eslint": "^6.0.0-rc.0",
